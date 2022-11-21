@@ -19,7 +19,6 @@ export const fetchCartData = () => {
 
         try {
             const cartData = await fetchData();
-            console.log(cartData);
             dispatch(
                 cartActions.replaceCart({
                     items: cartData.items || [],
@@ -28,7 +27,6 @@ export const fetchCartData = () => {
                 })
             );
         } catch (error) {
-            console.log(error);
             dispatch(
                 showNotification({
                     status: "error",
